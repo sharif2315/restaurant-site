@@ -1,0 +1,10 @@
+Using management commands to import/export source data
+------------------------------------------------------------
+To Export data:
+python manage.py export_menu_data
+------------------------------------------------------------
+To Import data:
+python3 manage.py import_menu_data ./utils/data/menu_data.json
+------------------------------------------------------------
+
+
