@@ -31,7 +31,7 @@ const About = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-14 lg:gap-28">
         <img
           className="h-full w-full max-w-lg md:max-w-xl lg:max-w-md xl:max-w-xl object-cover rounded-md shadow-xl"
-          src="https://lightofindia.co.uk/wp-content/uploads/2023/04/light-of-india_hero-650x650.jpeg"
+          src='/img/food-pic-1.jpg'
           alt=""
         ></img>
 
@@ -61,7 +61,7 @@ const About = () => {
       <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-14 lg:gap-28">
         <img
           className="h-full w-full max-w-lg md:max-w-xl lg:max-w-md xl:max-w-xl object-cover rounded-md shadow-xl"
-          src="https://lightofindia.co.uk/wp-content/uploads/2023/04/wine-emotions-history-lesson-2000-78fd3c055ef549529dd68175996a1f80-650x650.jpg"
+          src='/img/drinks-pic-1.jpg'
           alt=""
         ></img>
 

@@ -23,16 +23,25 @@ const Contact = () => {
   <div className="grid grid-cols-1 lg:grid-cols-2">
     
     
-    <div className="flex flex-col justify-center md:bg-cover md:bg-center mx-8 lg:mx-12 rounded-md"
-         style={{backgroundImage: "url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"}}
-    //   style="background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
-    >
+    <div className="flex flex-col justify-center md:bg-cover md:bg-center mx-8 lg:mx-12 rounded-md">
 
-
-      <div className="flex flex-col gap-4 justify-center items-center relative bg-[#fafaed] md:bg-black md:bg-opacity-60 md:text-white h-full rounded-md py-12 md:font-semibold tracking-wide">
+      <div className="flex flex-col gap-4 justify-center items-center relative bg-[#fafaed] h-full rounded-md py-12 tracking-wide">
         
         <div className="flex flex-col gap-3">          
-          
+
+          {/* Phone */} 
+          <div className="flex gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+              stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            <a href="" className="hover:cursor-pointer">
+              <p>(+) 01353 721777</p>
+            </a>
+          </div>
+
+          {/* Email */}
           <div className="flex gap-4">
             <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
               stroke="currentColor">
@@ -45,18 +54,8 @@ const Contact = () => {
               </a>
             </div> 
           </div>
-
-          <div className="flex gap-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
-              stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-            </svg>
-            <a href="" className="hover:cursor-pointer">
-              <p>(+) 01353 721777</p>
-            </a>
-          </div>
-
+        
+          {/* Address */} 
           <div className="flex gap-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
               stroke="currentColor" className="w-6 h-6">
@@ -74,7 +73,7 @@ const Contact = () => {
 
         {/* <!-- Opening Hours --> */}
         <div className="mx-auto w-56">
-          <h2 className="mt-8 mb-2 font-semibold text-lg">Opening Hours</h2>
+          <h2 className="mt-8 mb-2  text-lg">Opening Hours</h2>
 
           <div className="">
             <p className="flex justify-between gap-3">
