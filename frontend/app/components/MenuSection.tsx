@@ -1,20 +1,5 @@
+import { MenuCategory } from "@/menu.types";
 import Menu from "./Menu";
-
-export interface MenuItem {
-    id: number;
-    name: string;
-    description: string;
-    price: string;
-    category: number;
-    category_name: string;
-    category_description: string | null;
-}
-
-export interface MenuCategory {
-    name: string;
-    description: string | null;
-    menu_items: MenuItem[];
-}
 
 const MenuSection = async() => {
     const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
@@ -27,8 +12,10 @@ const MenuSection = async() => {
     const data: MenuCategory[] = await response.json();
 
     return(
-        <Menu menuCategories={data} />
+        <>
+            <Menu menuList={data} />
+        </>
+
     )
 }
-
 export default MenuSection;

@@ -1,85 +1,61 @@
-'use client'
-// import { useState, useEffect } from 'react';
-import { MenuCategory } from './MenuSection';
-
-
-// const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
+"use client";
+import { useState, useEffect } from "react";
+import { MenuCategory, MenuItem } from "@/menu.types";
+import { BsChevronRight } from "react-icons/bs";
 
 interface MenuProps {
-    menuCategories: MenuCategory[];
-
+  menuList: MenuCategory[];
 }
 
-const Menu: React.FC<MenuProps> = ({menuCategories}) => {
-    // const [menuCategories, setMenuCategories] = useState<MenuCategory[]>([]);
-    // const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    // const toggleIndex = (index: number) => {
-    //     setOpenIndexes(prevIndexes =>
-    //         prevIndexes.includes(index) ? prevIndexes.filter(i => i !== index) : [...prevIndexes, index]
-    //     );
-    // };
+const Menu: React.FC<MenuProps> = ({ menuList }) => {
 
-    // useEffect(() => {        
-    //     // const fetchMenuCategories = async () => {
-    //     //     try {
-    //     //         // const response = await fetch('http://localhost:8000/api/menu_items/');
-    //     //         // const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/menu_items/`);
-    //     //         const response = await fetch(`${BACKEND_URL}/api/menu_items/`);
 
-    //     //         if (!response.ok) {
-    //     //             throw new Error('Failed to fetch menu categories');
-    //     //         }
-                
-    //     //         const data: MenuCategory[] = await response.json();
-    //     //         // console.log(data);
-    //     //         setMenuCategories(data);
-    //     //         setOpenIndexes(Array.from({ length: data.length }, (_, i) => i + 1));
-    //     //     } catch (error) {
-    //     //         console.error(error);
-    //     //     }
-    //     // };
+  return (
+    <div className="my-24 flex flex-col justify-center items-center">
 
-    //     // fetchMenuCategories();
+      <h1 className="text-6xl">Menu</h1>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-center">
 
-    //     // Event listener for window resize
-    //     const handleResize = () => {
-    //         setWindowWidth(window.innerWidth);
-    //     };
-    //     window.addEventListener('resize', handleResize);
+        {menuList.map((category) => (
+          <div key={category.id} className="flex flex-col p-10 w-full max-w-xl">
 
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);    
+            <div className="flex items-baseline justify-between">
+              <h2 className="text-4xl">{category.name}</h2>
 
-    return (
-        <div className="my-24 flex flex-col justify-center items-center">
-            
-            <h1 className="text-6xl">Menu</h1>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 justify-center">
-
-                {/* {menuCategories.map((category, index) => (
-                    <div key={index} className="my-8">
-                        <h2 className="text-4xl">{category.name}</h2>
-                        <p className="text-lg">{category.description}</p>
-                        <ul>
-                            {category.menu_items.map((item, index) => (
-                                <li key={index} className="my-4">
-                                    <h3 className="text-2xl">{item.name}</h3>
-                                    <p className="text-lg">{item.description}</p>
-                                    <p className="text-lg">{item.price}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>         
-                ))} */}
+              {/* Arrow Icon */}
+              <div className="XXX_lg:hidden">
+                <BsChevronRight className="text-3xl text-gray-500 hover:text-gray-800 transform transition-transform duration-200 hover:cursor-pointer" />
+              </div>
 
             </div>
-        </div>
-    );
+
+            {/* display category description if it exists in category */}
+            {category.description && (
+              <p className="text-sm">{category.description}</p>
+            )}
+
+            {/* Menu Items Container */}
+            {/* run a for loop over the menu_items existing in each category */}
+            {category.menu_items.map((item) => (
+              <div key={item.id} className={`flex flex-col gap-2 mt-4 lg:overflow-y-auto lg:max-h-[50rem] lg:pr-4`}>
+                <div className="flex gap-4 items-center justify-between">
+                  <div className="w-3/4">
+                    <h3 className="font-semibold">{item.name}</h3>
+                    <p className="text-sm">{item.description}</p>
+                  </div>
+                  <p>{item.price}</p>
+                </div>
+              </div>
+            ))}          
+
+          </div>
+        ))}
+
+      </div>
+    </div>
+  );
 };
 
 export default Menu;
